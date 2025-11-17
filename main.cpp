@@ -4,6 +4,7 @@
 void run_medical_supply();    // role_supply.cpp
 void run_ambulance_dispatch();// role_ambulance.cpp
 void run_emergency_pQueue();  // emergency_pQueue.cpp
+void runPatientAdmissionClerk(); // role_patient.cpp
 
 // Helper for safe menu input
 int read_main_menu_choice(int min, int max) {
@@ -44,7 +45,7 @@ int main() {
                 return 0;
 
             case 1:
-                std::cout << "[TODO] Patient Admission (Queue) not implemented in this demo.\n";
+                runPatientAdmissionClerk();
                 break;
 
             case 2:
