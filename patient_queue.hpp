@@ -2,8 +2,7 @@
 #define PATIENT_QUEUE_HPP
 
 #include <string>
-#include <deque>
-#include <vector>
+#include <deque>   // Allowed
 
 struct Patient {
     int id;
@@ -21,6 +20,14 @@ struct MaybePatient {
     MaybePatient(const Patient& p) : hasValue(true), value(p) {}
 };
 
+// Simple array wrapper instead of std::vector
+struct PatientArray {
+    Patient* data;
+    size_t size;
+
+    PatientArray() : data(nullptr), size(0) {}
+};
+
 class PatientQueue {
 public:
     PatientQueue() = default;
@@ -28,13 +35,13 @@ public:
     void enqueue(const Patient& p);
     MaybePatient dequeue();
     MaybePatient peek() const;
-    std::vector<Patient> listAll() const;
+    PatientArray listAll() const;   // NOW RETURNS ARRAY
     MaybePatient findById(int id) const;
     size_t size() const noexcept;
     bool empty() const noexcept;
     void clear() noexcept;
 
 private:
-    std::deque<Patient> q;
+    std::deque<Patient> q;  // <deque> is allowed
 };
 #endif
