@@ -41,7 +41,7 @@ int main() {
 
         switch (choice) {
             case 0:
-                std::cout << "Bye.\n";
+                std::cout << "Exiting system......\n";
                 return 0;
 
             case 1:
