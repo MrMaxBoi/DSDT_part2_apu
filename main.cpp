@@ -3,7 +3,7 @@
 // forward decls for role entry points
 void run_medical_supply();    // role_supply.cpp
 void run_ambulance_dispatch();// role_ambulance.cpp
-void run_emergency_pQueue();  // emergency_pQueue.cpp
+void run_emergency_role();   // role_emergency.cpp
 void runPatientAdmissionClerk(); // role_patient.cpp
 
 // Helper for safe menu input
@@ -53,7 +53,7 @@ int main() {
                 break;
 
             case 3:
-                run_emergency_pQueue();
+                run_emergency_role();
                 break;
 
             case 4:
