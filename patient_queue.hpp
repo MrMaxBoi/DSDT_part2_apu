@@ -26,6 +26,12 @@ struct PatientArray {
     size_t size;
 
     PatientArray() : data(nullptr), size(0) {}
+    
+    bool empty() const { return size == 0; }
+    Patient* begin() { return data; }
+    Patient* end() { return data + size; }
+    const Patient* begin() const { return data; }
+    const Patient* end() const { return data + size; }
 };
 
 class PatientQueue {

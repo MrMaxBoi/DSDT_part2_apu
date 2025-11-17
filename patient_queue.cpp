@@ -36,8 +36,17 @@ MaybePatient PatientQueue::peek() const {
 }
 
 // List all patients
-std::vector<Patient> PatientQueue::listAll() const {
-    return std::vector<Patient>(q.begin(), q.end());
+PatientArray PatientQueue::listAll() const {
+    PatientArray arr;
+    arr.size = q.size();
+    if (arr.size > 0) {
+        arr.data = new Patient[arr.size];
+        size_t i = 0;
+        for (const auto& p : q) {
+            arr.data[i++] = p;
+        }
+    }
+    return arr;
 }
 
 // Find patient by ID
